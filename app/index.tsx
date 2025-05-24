@@ -1,15 +1,35 @@
-import { Text, View } from "react-native";
+import { View, Text, Button, FlatList } from 'react-native';
+import { Link } from 'expo-router';
+
+const dummyEntries = [
+  { id: '1', title: 'First entry',  body: 'Today was alright' },
+  { id: '2', title: 'Second entry', body: 'Could use a nap honestly' }
+];
 
 export default function Index() {
   return (
     <View
       style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        padding: 20
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <FlatList
+        data={dummyEntries}
+        keyExtractor={(item) => item.id}
+        renderItem={
+          ({item}) => (
+            <View style={{ marginBottom: 15 }}>
+              <Text style={{ fontWeight: 'bold' }}>
+                {item.title}
+              </Text>
+            </View>
+          )
+        }
+      />
+
+      <Link href="/new" asChild>
+        <Button title="Add New Entry" />
+      </Link>
     </View>
   );
 }
