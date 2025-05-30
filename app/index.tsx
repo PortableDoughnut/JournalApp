@@ -1,5 +1,5 @@
-import { View, Text, Button, FlatList } from 'react-native';
 import { Link } from 'expo-router';
+import { Button, FlatList, Text, View } from 'react-native';
 
 const dummyEntries = [
   { id: '1', title: 'First entry',  body: 'Today was alright' },
