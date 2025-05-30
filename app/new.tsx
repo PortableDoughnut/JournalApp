@@ -8,7 +8,7 @@ export default function NewEntryScreen() {
 
     return (
         <View style={{padding: 20}}>
-            // User Entry Input
+            {/* User Entry Input */}
             <TextInput
             value={newItem}
             onChangeText={setNewItem}
@@ -27,7 +27,7 @@ export default function NewEntryScreen() {
             }
             />
 
-            // List of what's been done
+            {/* List of what's been done */}
             <FlatList
             data={items}
             keyExtractor={(item, index) => index.toString()}
